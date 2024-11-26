@@ -1,0 +1,13 @@
+#!/bin/bash
+
+base=$(cat base.txt)
+
+last_char=$(echo -n $1 | tail -c 1)
+
+mkdir $last_char
+
+cp ~/Documents/CompetitiveProgramming/templates/long.cpp $last_char/sol.cpp
+
+url="${base}${last_char}"
+
+python3 ~/bin/problem.py $url

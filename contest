@@ -1,0 +1,13 @@
+#!/bin/bash
+base="https://codeforces.com/contest/$1/problem/"
+while getopts "g" flag
+do
+  case $flag in
+    "g")
+      base="https://www.codeforces.com/gym/$2/problem/"
+    ;;
+    *)
+      exit 1
+  esac
+done
+echo -n $base > base.txt
